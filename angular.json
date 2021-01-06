@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "template": {
+    "acp-frontend": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -67,18 +67,18 @@
           "builder": "ngx-build-plus:dev-server",
           "options": {
             "extraWebpackConfig": "webpack.config.js",
-            "browserTarget": "template:build"
+            "browserTarget": "acp-frontend:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "template:build:production"
+              "browserTarget": "acp-frontend:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "template:build"
+            "browserTarget": "acp-frontend:build"
           }
         },
         "test": {
@@ -117,11 +117,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "template:serve"
+            "devServerTarget": "acp-frontend:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "template:serve:production"
+              "devServerTarget": "acp-frontend:serve:production"
             }
           }
         },
@@ -149,21 +149,21 @@
         "serve-ssr": {
           "builder": "@nguniversal/builders:ssr-dev-server",
           "options": {
-            "browserTarget": "template:build",
-            "serverTarget": "template:server"
+            "browserTarget": "acp-frontend:build",
+            "serverTarget": "acp-frontend:server"
           },
           "configurations": {
             "production": {
-              "browserTarget": "template:build:production",
-              "serverTarget": "template:server:production"
+              "browserTarget": "acp-frontend:build:production",
+              "serverTarget": "acp-frontend:server:production"
             }
           }
         },
         "prerender": {
           "builder": "@nguniversal/builders:prerender",
           "options": {
-            "browserTarget": "template:build:production",
-            "serverTarget": "template:server:production",
+            "browserTarget": "acp-frontend:build:production",
+            "serverTarget": "acp-frontend:server:production",
             "routes": [
               "/"
             ]
@@ -175,7 +175,7 @@
       }
     }
   },
-  "defaultProject": "template",
+  "defaultProject": "acp-frontend",
   "cli": {
     "analytics": "400ad9bf-f5b0-4463-b578-141a313b4d7f"
   }
