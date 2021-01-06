@@ -11,7 +11,7 @@ import { LayoutModule } from 'src/layout/layout.module';
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FontAwesomeModule,
     LayoutModule
